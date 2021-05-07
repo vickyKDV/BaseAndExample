@@ -44,6 +44,12 @@
     ).toInt()
    how to implement ?
    
+    //all field value
     textview.margin(bottom = value,top = value, right = value, left = value))
-    textview.margin(bottom = resources.getDimension(R.dimen._8ssp))
+    
+    //with static & one field margin
+    textview.margin(bottom = 8f)
+    
+    //from dimens & one field margin
+    textview.margin(bottom = resources.getDimension(R.dimen.8))
     
