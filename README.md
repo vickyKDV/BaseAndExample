@@ -1,3 +1,22 @@
+# EditText Watcher Extension
+    fun EditText.afterTextChanged(afterTextChanged: (String) -> Unit) {
+        this.addTextChangedListener(object : TextWatcher {
+            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
+            }
+
+            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+            }
+
+            override fun afterTextChanged(editable: Editable?) {
+                afterTextChanged.invoke(editable.toString())
+            }
+        })
+    }
+    
+   And then use the extension like so
+    
+    editText.afterTextChanged { doSomethingWithText(it) }
+    
 # Add Bullet Icon in Textview
 
 
@@ -52,4 +71,3 @@
     
     //from dimens & one field margin
     textview.margin(bottom = resources.getDimension(R.dimen.8))
-    
