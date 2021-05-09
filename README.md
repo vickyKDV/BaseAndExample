@@ -61,7 +61,7 @@
         dp,
         resources.displayMetrics
     ).toInt()
-   how to implement ?
+   And then use the extension like so
    
     //all field value
     textview.margin(bottom = value,top = value, right = value, left = value))
