@@ -1,3 +1,25 @@
+# Convert Value To Rupiah
+    
+    fun convertRupiah(nominal: String?): String {
+        val convertResult: String
+        val localeID = Locale("in", "ID")
+        val pattern = "#,###"
+        val decimalFormat = NumberFormat.getNumberInstance(localeID) as DecimalFormat
+        decimalFormat.applyPattern(pattern)
+        convertResult = "Rp " + decimalFormat.format(nominal)
+        return convertResult
+    }
+    
+   And then use the extension like so
+        
+        val nominal = "200000"
+        textView.text = convertRupiah(nominal)
+        
+   and Result
+        
+        Rp 200.000
+    
+
 # RecyclerView LoadMore
     abstract class EndlessRecyclerViewScrollListener : RecyclerView.OnScrollListener {
         // The minimum amount of items to have below your current scroll position
