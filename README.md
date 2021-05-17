@@ -6,7 +6,7 @@
         val pattern = "#,###"
         val decimalFormat = NumberFormat.getNumberInstance(localeID) as DecimalFormat
         decimalFormat.applyPattern(pattern)
-        convertResult = "Rp " + decimalFormat.format(nominal)
+        convertResult = "Rp " + decimalFormat.format(java.lang.Double.valueOf(nominal))
         return convertResult
     }
     
